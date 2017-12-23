@@ -1,0 +1,139 @@
+import React, {Component} from 'react';
+
+import {Image} from 'react-native';
+
+import { Container, Header, Content, Item, Input, List, ListItem, View } from 'native-base';
+import { Title, Footer, FooterTab, Label, Badge, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Card, CardItem, Thumbnail, CheckBox, DeckSwiper, Fab, Form } from 'native-base';
+
+
+import Expo from 'expo';
+
+/*
+ * Example 17 @  Header Example
+ * Only one header allowed per container
+ *
+ * properties		default value	desc
+ *
+ */
+
+export default class BadgeExample extends Component {
+
+	constructor() {
+	   super();
+	    this.state={
+			  isReady: false,
+			};
+	              }
+
+	async componentWillMount() {
+		   await Expo.Font.loadAsync({
+		      'Roboto': require('native-base/Fonts/Roboto.ttf'),
+		      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+                	            });
+
+			this.setState({isReady:true});
+		                   }
+
+
+ 	render(){
+
+            if (!this.state.isReady) {
+	       return <Expo.AppLoading />;
+                 }  
+
+	    return (
+	      <Container>
+		    	<Header/>
+		        <Content>
+		          <Form>
+
+		    { /* fixedLabel input field */ }
+		            <Item fixedLabel>
+              			    <Label>Fixed Label</Label>
+	                	    <Input placeholder="Fixed Label"/>
+	                    </Item>
+
+		    { /* label is inline initially but floats upwards on focus and downwards on out of focus */ }
+		            <Item floatingLabel>
+		              <Label> floatingLabel </Label>
+		              <Input/>
+		            </Item>
+
+		    { /* label is fixed to left - similar to fixedlabel */ }
+		            <Item inlineLabel>
+		              <Label> inlineLabel </Label>
+		              <Input placeholder="inlineLabel" />
+		            </Item>
+
+		    { /* label is stacked above the input field */ }
+		            <Item stackedLabel>
+		              <Label> stackedLabel </Label>
+		              <Input placeholder="stackedLabel" />
+		            </Item>
+
+		    { /*  regular input item */ }
+		            <Item regular>
+		              <Label> regular </Label>
+		              <Input placeholder="regular" />
+		            </Item>
+
+		    { /*  rounded input field */ }
+		            <Item rounded>
+		              <Input placeholder="rounded" />
+		            </Item>
+
+
+		    { /*  underline input item */ }
+		            <Item underline>
+		              <Input placeholder="underlinetrue" />
+		            </Item>
+
+		    { /*  bordered input field */ }
+		            <Item bordered>
+		              <Label> bordered </Label>
+		              <Input placeholder="bordered" />
+		            </Item>
+
+
+		    { /*  icon input field */ }
+		            <Item>
+		              <Icon active name='home'/>
+		              <Input placeholder="IconInput" />
+		            </Item>
+
+ 		     { /*  successlabel */ }
+		            <Item success>
+		              <Input placeholder="success" />
+		    	      <Icon name='checkmark-circle' />
+		            </Item>
+		            
+ 		     { /*  errorlabel */ }
+		            <Item error>
+		              <Input placeholder="failure" />
+		    	      <Icon name='close-circle' />
+		            </Item>
+		            
+                     { /*  disabled input item */ }
+		            <Item disabled>
+		              <Input disabled placeholder="disbled" />
+		    	      <Icon name='information-circle' />
+		            </Item>
+
+ 		     { /*  last item styling */ }
+		            <Item last>
+		              <Input placeholder="lastfield" />
+		            </Item>
+
+		            <Button full>
+		              <Text> Signin </Text>
+		            </Button>
+
+		          </Form>
+		        </Content>
+	      </Container>
+    );
+  }
+}
+
+

@@ -1,0 +1,30 @@
+﻿drawer page
+	profile foto icon
+	blue down arrow
+	profile
+	lists
+	moments
+	highlights
+	nightmode
+	qr code
+//background images
+//		new tweet
+	add friend
+//		mail
+//		settings
+
+search screen
+	settings
+
+home screen
+	home
+	search icon
+	notifications
+	tweet
+	comments
+	retweet
+	like
+	mailsmall (reply)
+	new tweet
+	settings icon
+	profile foto icon
